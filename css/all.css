@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#map {
+    width: 80%;
+    height: 600px;
+    margin: 150px auto 0px auto;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 4px #fff, 0px 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+li{
+    list-style: none;
+}
+a:hover{
+    text-decoration: none;
+}
+/* 這是Header */
+header{
+    background-image: url(../img/Hero.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    height: 380px;
+}
+header>h1{
+    padding-top: 90px;
+    margin-bottom: 76px;
+    color: white;
+    font-size: 40px;
+}
+/* 這是熱門選擇區 */
+.hotlist{
+    width: 78%;
+    border: 1px solid gray;
+    background-color: white;
+    position: absolute;
+    left: 11%;
+    top: 355px;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+}
+.hotlist h2{
+    font-size: 1.5rem;
+}
+.hotlist ul{
+    justify-content: space-around;
+}
+header>select{
+    width: 40%;
+    height: 40px;
+    font-weight: bold;
+    background-color: rgba(255,255,255,.9);
+    border: 3px solid white;
+    border-radius: 5px;
+}
+.hotlist>ul>a{
+    display: block;
+    width: 150px;
+    background-color: white;
+    border: 1px solid gray;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: #8A82CC;
+    color: white;
+}
+/* 這是資料顯示區塊 */
+.main{
+    margin-top: 90px;
+}
+.main>ul{
+    margin-left: 5%;
+}
+.main>h2{
+    font-weight: bold;
+    font-size: 40px;
+}
+.dataBox{
+    width: 45%;
+    position: relative;
+    float: left;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 35px;
+    margin-right: 4.8%;
+}
+.pic{
+    width: 100%;
+    overflow: hidden;
+    height: 180px;
+    position: relative;
+}
+.pic>img{
+    width: 100%;
+    position: absolute;
+    top: -60px;
+}
+.dataBoxTitle{
+    position: absolute;
+    top: 125px;
+    left: 25px;
+    color: white;
+}
+.dataBoxZone{
+    position: absolute;
+    top: 135px;
+    right: 50px;
+    color: white;
+    font-size: 1.5rem;
+}
+.dataBoxText>p{
+    margin: 10px 0 10px 10px;
+}
+.ticket{
+    position: absolute;
+    right: 20px;
+    bottom: 0px;
+}
+
+
+@media (max-width: 991.98px) {
+    .dataBox{
+        width: 100%;
+        float: none;
+    }
+}
+/* This is footer */
+.clearFix{
+    clear: both;
+}
+footer{
+    background-color: black;
+    color: white;
+    height: 100px;
+}

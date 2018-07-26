@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>高雄旅遊資訊網</title>
+    <link rel="stylesheet" href="./js/bootstrap-400-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/all.css">
+</head>
+
+<body>
+    <div class="container position-relative" id="app">
+        <!-- 這是Header -->
+        <header class="text-center">
+            <h1>高雄旅遊資訊</h1>
+            <select v-model="zoneSelector">
+                <option value="所有景點" selected >所有景點</option>
+                <option :value="zone" v-for="zone in zoneList">{{zone}}</option>
+            </select>
+        </header>
+
+        <!-- 這是熱門選擇區 -->
+        <div class="hotlist text-center">
+            <h2>熱門行政區</h2>
+            <ul class="d-flex mt-4">
+                <a href="#" @click.prevent=" zoneSelector = '苓雅區' " >
+                    <li>苓雅區</li>
+                </a>
+                <a href="#" @click.prevent=" zoneSelector = '三民區' " >
+                    <li>三民區</li>
+                </a>
+                <a href="#" @click.prevent=" zoneSelector = '新興區' " >
+                    <li>新興區</li>
+                </a>
+                <a href="#" @click.prevent=" zoneSelector = '美濃區' " >
+                    <li>美濃區</li>
+                </a>
+            </ul>
+        </div>
+
+        <div id="map"></div>
+
+        <!-- 這是資料顯示區塊 -->
+        <div class="main">
+            <h2 class="text-center mb-5">{{zoneSelector}}</h2>
+            <ul>
+                <li class="dataBox" v-for="item in filter">
+                    <div class="pic">
+                        <img :src="item.Picture1" alt="">
+                    </div>
+                    <h5 class="dataBoxTitle">{{item.Name}}</h5>
+                    <p class="dataBoxZone">{{item.Zone}}</p>
+                    <div class="dataBoxText">
+                        <p class="time"> <img src="./img/icons_clock.png" alt=""> {{item.Opentime}}</p>
+                        <p class="add"> <img src="./img/icons_pin.png" alt=""> {{item.Add}}</p>
+                        <p class="phone"> <img src="./img/icons_phone.png" alt=""> {{item.Tel}}</p>
+                        <p class="ticket"> <img src="./img/icons_tag.png" alt=""> {{item.Ticketinfo}}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <div class="clearFix"></div>
+        <!-- This is Footer -->
+        <footer>
+            <h4 class="text-center pt-3">Copyright © Po-Sheng Huang All rights reserved</h4>
+            <p class="text-center">資料來源：高雄市政府</p>
+        </footer>
+    </div>
+
+
+
+
+
+
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy7niYo3hKVoLoxDPCbZqRZWG_x7jml4k&callback=initMap">
+    </script>
+    <script src="./js/vue.js"></script>
+    <script src="./js/all.js"></script>
+</body>
+
+</html>
